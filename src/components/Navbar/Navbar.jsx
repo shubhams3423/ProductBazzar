@@ -19,7 +19,7 @@ const Navbar = () => {
       className={`border-b-3  ${
         theme === "light" ? "bg-white" : "bg-[#193351]"
       } shadow-md px-5 py-3 transition ease-in-out delay-150 relative ${
-        menu ? "h-[40vh] rounded-b-md items-start" : "h-14 "
+        menu ? "h-[40vh] rounded-b-md items-start" : "h-14"
       } flex  justify-between `}
     >
       <div className="flex h-fit items-center ">
