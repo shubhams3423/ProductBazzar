@@ -3,6 +3,8 @@ import React from "react";
 const MyContext = createContext("");
 const ContextProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
+  const [showAddressModal, setShowAddressModal] = useState(false);
+
   const toggleTheme = () => {
     // if (theme === "light") {
     //   setTheme("dark");
@@ -11,7 +13,9 @@ const ContextProvider = ({ children }) => {
     // }
   };
   return (
-    <MyContext.Provider value={{ theme, toggleTheme }}>
+    <MyContext.Provider
+      value={{ theme, toggleTheme, showAddressModal, setShowAddressModal }}
+    >
       {children}
     </MyContext.Provider>
   );

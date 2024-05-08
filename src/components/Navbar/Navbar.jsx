@@ -72,6 +72,7 @@ const Navbar = () => {
             Order
           </Link>
           <Link
+            to="/login"
             className={`font-medium ${
               theme === "light" ? "text-black" : "text-[#e2e8f0]"
             } px-4`}
@@ -83,7 +84,7 @@ const Navbar = () => {
           <Link className="rounded-full p-1 bg-purple-300 border-2 border-gray-500">
             <FaRegUser className="text-black" />
           </Link>
-          <Link className=" ms-[13px]">
+          <Link to="/cart" className=" ms-[13px]">
             <HiOutlineShoppingCart
               className={`text-xl ${
                 theme === "light" ? "text-black" : "text-[#e2e8f0]"

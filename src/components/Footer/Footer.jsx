@@ -6,6 +6,7 @@ import linkedInIcon from "../../images/linkedIn-icon.png";
 import logo from "../../images/logo.png";
 import { CiShop } from "react-icons/ci";
 import flag from "../../images/Indian-Flag.png";
+import { TiHeartFullOutline } from "react-icons/ti";
 const Footer = () => {
   return (
     <footer className="">
@@ -15,7 +16,7 @@ const Footer = () => {
             <h2 className="mb-3 text-[#b3b3b3] font-semibold ">
               ONLINE SHOPPING
             </h2>
-            <ul className="flex flex-col gap-y-2 ">
+            <ul className="flex flex-col md:gap-y-2 gap-y-1">
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Men
               </li>
@@ -29,7 +30,7 @@ const Footer = () => {
           </div>
           <div className="">
             <h2 className="mb-3 text-[#b3b3b3] font-semibold  ">ABOUT</h2>
-            <ul className="flex flex-col gap-y-2 ">
+            <ul className="flex flex-col md:gap-y-2 gap-y-1 ">
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Contact Us
               </li>
@@ -40,7 +41,7 @@ const Footer = () => {
           </div>
           <div className="max-md:mt-3">
             <h2 className="text-[#b3b3b3] font-semibold mb-3">SERVICES</h2>
-            <ul className="flex flex-col gap-y-2">
+            <ul className="flex flex-col md:gap-y-2 gap-y-1">
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Become a seller
               </li>
@@ -70,8 +71,9 @@ const Footer = () => {
       <div className="bg-[#131A22] py-2">
         <div className="flex items-center justify-center">
           <div>
-            <p className="text-white">
-              Made with love by {""}
+            <p className="text-white  ">
+              Made with{" "}
+              <TiHeartFullOutline className="text-red-600 w-5 h-5 inline" /> by{" "}
               <a
                 href="https://www.linkedin.com/in/shubham-shinde-69b688297/"
                 target="_blank"

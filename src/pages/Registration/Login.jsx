@@ -20,7 +20,7 @@ const Login = () => {
               <p className="border rounded-lg border-gray-700 p-2 flex items-center ">
                 <input
                   type="text"
-                  className="outline-none placeholder-gray-400 text-md w-72"
+                  className="outline-none placeholder-gray-400 text-md md:w-72 w-64"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -30,7 +30,7 @@ const Login = () => {
               <p className="border rounded-lg border-gray-700 p-2 flex items-center ">
                 <input
                   type={showPassword ? "password" : "text"}
-                  className="outline-none placeholder-gray-400 text-md w-72"
+                  className="outline-none placeholder-gray-400 text-md md:w-72 w-64"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
