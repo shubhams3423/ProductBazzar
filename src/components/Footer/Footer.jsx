@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="bg-[#212121e8] body-font">
         <div className="lg:w-9/12 mx-auto max-md:mx-10 max-sm:mx-6 py-10 grid lg:grid-cols-4 md:grid-cols-3   grid-cols-2  lg:gap-x-32 md:gap-x-24 gap-x-12">
           <div className="">
-            <h2 className="mb-3 text-[#b3b3b3] font-semibold ">
+            <h2 className="mb-1 text-[#b3b3b3] font-semibold ">
               ONLINE SHOPPING
             </h2>
             <ul className="flex flex-col md:gap-y-2 gap-y-1">
@@ -29,7 +29,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="">
-            <h2 className="mb-3 text-[#b3b3b3] font-semibold  ">ABOUT</h2>
+            <h2 className="mb-1 text-[#b3b3b3] font-semibold  ">ABOUT</h2>
             <ul className="flex flex-col md:gap-y-2 gap-y-1 ">
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Contact Us
@@ -39,19 +39,16 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="max-md:mt-3">
-            <h2 className="text-[#b3b3b3] font-semibold mb-3">SERVICES</h2>
+          <div className="max-md:mt-4">
+            <h2 className="text-[#b3b3b3] font-semibold mb-1">SERVICES</h2>
             <ul className="flex flex-col md:gap-y-2 gap-y-1">
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Become a seller
               </li>
-              <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
-                Seller Login
-              </li>
             </ul>
           </div>
-          <div className="max-md:mt-3">
-            <h2 className="text-[#b3b3b3] font-semibold mb-3">HELP</h2>
+          <div className="max-md:mt-4">
+            <h2 className="text-[#b3b3b3] font-semibold mb-1">HELP</h2>
             <ul>
               <li className="text-[#e3e3e3] cursor-pointer hover:text-white hover:scale-105 duration-150">
                 Privacy

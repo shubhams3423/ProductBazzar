@@ -7,7 +7,7 @@ import { FaRegUser } from "react-icons/fa";
 import { RiMenu2Fill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 import logo from "../../images/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const { theme, toggleTheme } = useProductContext();
   const [menu, setMenu] = useState(false);
@@ -55,42 +55,46 @@ const Navbar = () => {
             menu ? "block flex-col absolute gap-y-6 left-8 top-16" : "hidden"
           } `}
         >
-          <Link
+          <NavLink
             to={"/"}
             className={`font-medium ${
               theme === "light" ? "text-black" : "text-[#e2e8f0]"
             } px-4`}
           >
             All Products
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to={"/order"}
             className={`font-medium ${
               theme === "light" ? "text-black" : "text-[#e2e8f0]"
             } px-4`}
           >
             Order
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/login"
             className={`font-medium ${
               theme === "light" ? "text-black" : "text-[#e2e8f0]"
             } px-4`}
           >
             Login
-          </Link>
+          </NavLink>
         </ul>
         <div className="flex items-center ms-4">
-          <Link className="rounded-full p-1 bg-purple-300 border-2 border-gray-500">
+          <NavLink
+            to="/dashboard"
+            className="rounded-full p-1 bg-purple-300 border-2 border-gray-500"
+          >
             <FaRegUser className="text-black" />
-          </Link>
-          <Link to="/cart" className=" ms-[13px]">
-            <HiOutlineShoppingCart
-              className={`text-xl ${
-                theme === "light" ? "text-black" : "text-[#e2e8f0]"
-              }`}
-            />
-          </Link>
+          </NavLink>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) => {
+              return isActive ? "ms-[13px] text-yellow-300" : "ms-[13px]";
+            }}
+          >
+            <HiOutlineShoppingCart className="text-xl" />
+          </NavLink>
           <div className=" ms-[13px]">
             {theme === "light" ? (
               <FiSun

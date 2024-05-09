@@ -1,7 +1,7 @@
 import React from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 
-const ProductCart = () => {
+const SingleProduct = () => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-8 md:py-16 mx-auto">
@@ -122,4 +122,4 @@ const ProductCart = () => {
   );
 };
 
-export default ProductCart;
+export default SingleProduct;
