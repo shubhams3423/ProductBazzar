@@ -3,15 +3,48 @@ import { MdEmail } from "react-icons/md";
 import { IoEye } from "react-icons/io5";
 
 import { IoEyeOffSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  signInWithCredential,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { useProductContext } from "../../context/ContextProvider";
+import { toast } from "react-toastify";
+import { auth } from "../../firebase/firebaseConfig";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { loading, setLoading } = useProductContext();
+
+  const navigate = useNavigate("");
+  const signInHandler = async () => {
+    if (email === "" || password === "")
+      return toast.error("All fields are required");
+    try {
+      setLoading(true);
+      const userLogin = await signInWithEmailAndPassword(auth, email, password);
+      console.log("user log :", userLogin);
+      localStorage.setItem("user", JSON.stringify(userLogin));
+      setLoading(true);
+      navigate("/");
+    } catch (error) {
+      toast.error(error.message);
+      setLoading(false);
+    }
+  };
   return (
     <div className="">
-      <div className="h-screen flex items-center justify-center">
-        <div className="bg-white border-2 rounded-lg p-4">
+      <div
+        className={`${
+          loading ? "bg-gray-200" : "bg-white"
+        } h-screen flex items-center justify-center`}
+      >
+        <div
+          className={`${
+            loading ? "bg-gray-100" : "bg-white"
+          } border-2 rounded-lg p-4`}
+        >
           <div className="mb-12">
             <h1 className="font-semibold text-2xl">Login</h1>
           </div>
@@ -20,7 +53,9 @@ const Login = () => {
               <p className="border rounded-lg border-gray-700 p-2 flex items-center ">
                 <input
                   type="text"
-                  className="outline-none placeholder-gray-400 text-md md:w-72 w-64"
+                  className={`outline-none ${
+                    loading ? "bg-gray-100" : "bg-white"
+                  } text-md md:w-72 w-64 placeholder-gray-400`}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
@@ -30,7 +65,9 @@ const Login = () => {
               <p className="border rounded-lg border-gray-700 p-2 flex items-center ">
                 <input
                   type={showPassword ? "password" : "text"}
-                  className="outline-none placeholder-gray-400 text-md md:w-72 w-64"
+                  className={`outline-none ${
+                    loading ? "bg-gray-100" : "bg-white"
+                  } text-md md:w-72 w-64 placeholder-gray-400`}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
@@ -48,7 +85,10 @@ const Login = () => {
                   />
                 )}
               </p>
-              <button className="rounded-lg p-2 bg-orange-500 w-full font-semibold text-xl text-white">
+              <button
+                className="rounded-lg p-2 bg-orange-500 w-full font-semibold text-xl text-white"
+                onClick={signInHandler}
+              >
                 Login
               </button>
             </div>
